@@ -1,0 +1,9 @@
+{% extends "web/base.html" %}
+{% block titulo %}Detalle de receta{% endblock %}
+{% block contenido %}
+    <p>Nombre: {{receta.Nombre }}</p>
+    <p>Descripcion: {{receta.Descripcion }}</p>
+    <p>Imagen: {{receta.Imagen }}</p>
+    <p>Ingredientes: {{receta.Ingredientes }}</p>
+    <p>Preparacion: {{receta.Preparacion }}</p>
+{% endblock %}
