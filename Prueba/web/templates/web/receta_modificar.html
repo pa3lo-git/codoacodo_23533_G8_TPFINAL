@@ -1,10 +1,35 @@
 {% extends "web/base.html" %}
 {% block titulo %}Modificar receta{% endblock %}
 {% block contenido %}
+<div class="container-sm p-5 my-5">
     <h3>Datos de la modificacion de Receta</h3>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        <!-- {{ form.as_p }} -->
+        <p>
+            <label for="id_Nombre">Nombre:</label>
+            <input type="text" class="form-control" value="{{receta.Nombre}}" name="Nombre" maxlength="30" id="id_Nombre">
+      </p>
+      <p>
+            <label for="id_Imagen">Imagen:</label>
+            Currently: <a href="{{ receta.Imagen.url }}">{{receta.Imagen}}</a><br>
+            Change:
+            <input type="file"  class="form-control" name="Imagen" accept="image/*" required id="id_Imagen">
+      </p>
+      <p>
+            <label for="id_Descripcion">Descripcion:</label>
+            <textarea class="form-control" name="Descripcion" maxlength="150" id="id_Descripcion">{{receta.Descripcion}}</textarea>
+      </p>
+      <p>
+            <label for="id_Ingredientes">Ingredientes:</label>
+            <textarea class="form-control" name="Ingredientes" maxlength="300" id="id_Ingredientes">{{receta.Ingredientes}}</textarea>
+      </p>
+      <p>
+            <label for="id_Preparacion">Preparacion:</label>
+            <textarea class="form-control" name="Preparacion" maxlength="500" id="id_Preparacion">{{receta.Preparacion}}</textarea>
+      </p>
+
         <input type="submit" value="Update">
     </form>
+</div>
 {% endblock %}

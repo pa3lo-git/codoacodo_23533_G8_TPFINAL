@@ -1,9 +1,41 @@
 {% extends "web/base.html" %}
 {% block titulo %}Detalle de receta{% endblock %}
 {% block contenido %}
-    <p>Nombre: {{receta.Nombre }}</p>
-    <p>Descripcion: {{receta.Descripcion }}</p>
-    <p>Imagen: {{receta.Imagen }}</p>
-    <p>Ingredientes: {{receta.Ingredientes }}</p>
-    <p>Preparacion: {{receta.Preparacion }}</p>
+<div class="container-sm p-5 my-5" style="background-color: #163d30;">
+
+    <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ receta.Imagen.url }}" class="img-fluid rounded-start" alt="{{ receta.Nombre }}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{receta.Nombre }}</h5>
+              <p class="card-text">{{receta.Descripcion}}</p>
+              <!-- <p class="card-text"><small class="text-muted">{{receta.Ingredientes }}</small></p>
+              <p class="card-text"><small class="text-muted">{{receta.Preparacion }}</small></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Ingredientes</h5>
+              <p class="card-text">{{receta.Ingredientes }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Preparacion</h5>
+              <p class="card-text">{{receta.Preparacion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 {% endblock %}

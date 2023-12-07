@@ -1,10 +1,36 @@
 {% extends "web/base.html" %}
 {% block titulo %}Crear receta{% endblock %}
 {% block contenido %}
-    <h3>Datos de la nueva Receta</h3>
-    <form method="post" enctype="multipart/form-data" action="{% url 'receta_crear' %}">
+<div class="container-sm p-5 my-5">
+    <h3>Ingrese los datos de la nueva Receta</h3>
+    <!-- <form method="post" enctype="multipart/form-data" action="{% url 'receta_crear' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit">
+    </form> -->
+    <form method="post" enctype="multipart/form-data" action="{% url 'receta_crear' %}">
+        {% csrf_token %}
+        <p>
+			  <label for="id_Nombre">Nombre:</label>
+			  <input type="text" class="form-control" name="Nombre" maxlength="30" id="id_Nombre">
+		</p>
+        <p>
+			  <label for="id_Imagen">Imagen:</label>
+			  <input type="file"  class="form-control" name="Imagen" accept="image/*" required id="id_Imagen">
+		</p>
+        <p>
+			  <label for="id_Descripcion">Descripcion:</label>
+			  <textarea class="form-control" name="Descripcion" maxlength="150" id="id_Descripcion"></textarea>
+		</p>
+        <p>
+			  <label for="id_Ingredientes">Ingredientes:</label>
+			  <textarea class="form-control" name="Ingredientes" maxlength="300" id="id_Ingredientes"></textarea>
+		</p>
+        <p>
+			  <label for="id_Preparacion">Preparacion:</label>
+			  <textarea class="form-control" name="Preparacion" maxlength="500" id="id_Preparacion"></textarea>
+		</p>
+        <input type="submit">
     </form>
+</div>
 {% endblock %}

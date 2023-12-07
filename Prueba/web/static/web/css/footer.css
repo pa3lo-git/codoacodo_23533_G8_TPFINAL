@@ -1,0 +1,10 @@
+footer .logo-grupo {
+    max-width: 130px; /* Establece el ancho máximo deseado para la imagen */
+    padding: 5px;
+}
+
+footer .logo-codo-a-codo {
+    max-width: 250px; /* Establece el ancho máximo deseado para la imagen */
+    margin-right: 50px; /* Agrega un margen derecho para separar la imagen del texto */
+    padding: 5px;
+}

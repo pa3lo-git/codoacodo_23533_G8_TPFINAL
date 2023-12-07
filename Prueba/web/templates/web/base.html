@@ -10,10 +10,10 @@
     {% bootstrap_javascript %}
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-sm sticky-top" style="background-color: #CCD5AE;">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'recetas_listado' %}">
-            <img src="{% static 'web\imagenes\logo_recetario_2.png' %}" alt="Avatar Logo" style="width: 100px;" class="rounded-pill"> 
+            <img src="{% static 'web\imagenes\logo_recetas_deliciosas.png' %}" alt="Avatar Logo" style="width: 100px;" class="rounded-pill"> 
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -37,6 +37,21 @@
       </nav>
     {% block contenido %}
     {% endblock %}
-</div>
+<footer style="background-color: #333;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <img class="logo-grupo" src="{% static 'web\imagenes\logo_grupo_8.png' %}" alt="logo-de-pie-de-pagina">
+      </div>
+      <div class="col-lg-4">
+        <p>© 2023 El Recetario</p>
+      </div>
+      <div class="col-lg-4">
+        <img class="logo-codo-a-codo" src="{% static 'web\imagenes\logo_codo_a_codo.png' %}" alt="logo-codoacodo-pie-de-pagina">
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

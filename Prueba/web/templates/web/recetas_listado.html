@@ -1,21 +1,26 @@
 {% extends "web/base.html" %}
 {% block titulo %}Receta Listado{% endblock %}
 {% block contenido %}
-<div class="container-sm p-5 my-5 bg-primary">
-
+<div class="container-sm p-5 my-5" style="background-color: #163d30;">
+  <div class="row">
     {% for receta in listado_recetas %}
-    <div class="card" style="width:400px">
-        <img class="card-img-top" src="{{ receta.Imagen.url }}" alt="{{ receta.Nombre }}" style="width:100%">
-        <div class="card-body">
-          <h4 class="card-title">{{ receta.Nombre }}</h4>
-          <p class="card-text">{{ receta.Descripcion }}</p>
-          <a href="{% url 'receta_detalle' pk=receta.id %}" class="btn btn-primary">Ver</a>
-          <a href="{% url 'receta_modificar' pk=receta.id %}" class="btn btn-warning">Modificar</a>
-          <a href="{% url 'receta_borrar' pk=receta.id %}" class="btn btn-danger">Eliminar</a>
+    <div class="col-sm-4">
+        <div class="card h-100" width="50px">
+          <img class="card-img-top" style="object-fit: cover;" src="{{ receta.Imagen.url }}" alt="{{ receta.Nombre }}" height="250px">
+          <div class="card-body">
+            <h4 class="card-title">{{ receta.Nombre }}</h4>
+            <p class="card-text">{{ receta.Descripcion }}</p>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'receta_detalle' pk=receta.id %}" class="btn btn-primary">Ver</a>
+            <a href="{% url 'receta_modificar' pk=receta.id %}" class="btn btn-warning">Modificar</a>
+            <a href="{% url 'receta_borrar' pk=receta.id %}" class="btn btn-danger">Eliminar</a>
+          </div>
         </div>
       </div>
-    {% empty %}
+      {% empty %}
         <p>Sin Recetas registradas</p>
     {% endfor %}
+  </div>  
 </div>    
 {% endblock %}

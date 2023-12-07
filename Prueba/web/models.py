@@ -8,3 +8,6 @@ class Receta(models.Model):
     Imagen = models.ImageField(upload_to='')
     Ingredientes = models.CharField(max_length=300, verbose_name='Ingredientes')
     Preparacion = models.CharField(max_length=500, verbose_name='Preparacion')
+    
+    def __str__(self):
+        return f"{self.Nombre}"
