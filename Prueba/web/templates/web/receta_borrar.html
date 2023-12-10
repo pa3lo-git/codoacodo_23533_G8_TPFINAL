@@ -4,8 +4,14 @@
     <h3>Borrar receta</h3>
     <form method="post">
         {% csrf_token %}
-        <p>Estás seguro de querer borrar: "{{ object }}"?</p>
+        <!-- <p>Estás seguro de querer borrar: "{{ object }}"?</p> -->
+        <div class="alert alert-danger d-flex align-items-center" width="50%" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+              Atencion, esta por eliminar la receta de {{ object }}
+            </div>
+          </div>        
         {{ form }}
-        <input type="submit" value="Confirm">
+        <input type="submit" value="Confirmar">
     </form>
 {% endblock %}

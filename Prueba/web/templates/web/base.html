@@ -1,4 +1,5 @@
 {% load static %}
+<link rel="stylesheet" href="{% static 'web/css/footer.css' %}">
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,10 +19,10 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <div class="collapse navbar-collapse text-dark" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="{% url 'recetas_listado' %}" role="button" data-bs-toggle="dropdown">Recetas</a>
+                <a class="nav-link dropdown-toggle text-dark" href="{% url 'recetas_listado' %}" role="button" data-bs-toggle="dropdown">Recetas</a>
                 <ul class="dropdown-menu">
                   {% for receta in listado_recetas %}
                   <li><a class="dropdown-item" href="{% url 'receta_detalle' pk=receta.id %}">{{ receta.Nombre }}</a></li>
@@ -29,7 +30,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'receta_crear' %}">Alta</a>
+                <a class="nav-link text-dark" href="{% url 'receta_crear' %}">Alta</a>
               </li>
             </ul>
           </div>
@@ -43,7 +44,7 @@
       <div class="col-lg-4">
         <img class="logo-grupo" src="{% static 'web\imagenes\logo_grupo_8.png' %}" alt="logo-de-pie-de-pagina">
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-4" style="color: white;">
         <p>© 2023 El Recetario</p>
       </div>
       <div class="col-lg-4">
