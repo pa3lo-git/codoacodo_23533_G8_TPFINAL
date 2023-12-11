@@ -17,6 +17,9 @@
 Integrantes:
 
 Pablo Iglesias
+
 Nicolas Butterfield
+
 Natalia Palmieri
+
 Sabrina 
