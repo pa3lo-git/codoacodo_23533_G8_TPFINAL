@@ -16,7 +16,7 @@ class RecetaListView(ListView):
 class RecetaCreateView(CreateView):
     model = Receta
     template_name = 'web/receta_crear.html'
-    success_url = '/recetas'
+    success_url = '/'
     fields = ['Nombre', 'Imagen', 'Descripcion', 'Ingredientes', 'Preparacion']
 
     def get_context_data(self, **kwargs):
