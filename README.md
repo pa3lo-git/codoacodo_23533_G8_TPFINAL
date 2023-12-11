@@ -13,3 +13,10 @@
 ✏️ Editar Receta: Ajusta las cantidades, ingredientes o instrucciones.
 
 ❌ Eliminar Receta: ¡Adiós a esa receta que ya no te gusta!
+
+Integrantes:
+
+Pablo Iglesias
+Nicolas Butterfield
+Natalia Palmieri
+Sabrina 
